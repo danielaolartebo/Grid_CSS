@@ -1,0 +1,125 @@
+body {
+    display: grid;
+    margin: var(--space-size);
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+    "header header header header header header header header header header header header"
+    "main main main main main main main main main sidebar sidebar sidebar"
+    "footer footer footer footer footer footer footer footer footer footer footer footer";
+}
+
+/* Header */
+header {
+    border: 1px dashed;
+    grid-area: header;
+}
+
+/* Main */
+main {
+    display: grid;
+    border: 1px dashed;
+    grid-area: main;
+}
+
+.client_stories > div {
+    display: grid;
+    border: 1px dashed;
+    grid-template-columns: repeat(3, 320px);
+    gap: calc(var(--space-size)*2);
+    justify-content: space-between;
+    grid-gap: calc(var(--space-size)*2) 0;
+}
+
+.client_stories .column:first-of-type {
+    background: url('./images/cn-client-bg.jpeg') rgba(29, 14, 21, 0.3);
+    background-size: cover;
+    background-blend-mode: multiply;
+    padding: var(--space-size);
+    color: white;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    align-content: end;
+    flex-direction: column;
+    flex-grow: 2;         
+    flex-shrink: 1;       
+    flex-basis: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.features > div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card-first {
+    order: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.card-second {
+    order: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.card-third {
+    order: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+.card-fourth {
+    order: 4;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+}
+
+.card-fifth {
+    order: 5;
+    background-color: white;
+    color: var(--secondary-color);
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.card-six {
+    order: 6;
+    background: var(--secondary-color);
+    color: white;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+/* Aside */
+aside {
+    display: grid;
+    grid-row: 2;
+    grid-template-rows: repeat(3, max-content);
+    border: 1px dashed;
+    grid-area: sidebar;
+    align-content: space-between;
+}
+
+/* Footer */
+footer {
+    border: 1px dashed;
+    grid-area: footer;
+}
